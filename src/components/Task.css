@@ -1,0 +1,18 @@
+#taskbox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+    background-color: aquamarine;
+    height:5rem;
+    margin-bottom: 1rem;
+}
+#taskbox span{
+    background-color: azure;
+width: 50%;
+}
+#taskbox input{
+width:5%;
+}

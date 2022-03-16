@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Container.css';
+import Task from './Task';
  
  export default class Container extends Component {
    render() {
@@ -14,7 +15,12 @@ import './Container.css';
              </div>
 
              <div id="list">
-            
+                 <Task />
+                 <Task/>
+                 <Task />
+                 <Task/>
+                 <Task />
+                 <Task/>
              </div>
        </div>
      )
