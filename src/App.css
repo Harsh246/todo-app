@@ -1,38 +1,55 @@
-.App {
-  text-align: center;
+#main{
+    width:100vw;
+    height:100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    transition: .4s ease-out 0, 1s;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#background{
+
+    width:30%;
+    height:100%;
+   
+    position:fixed;
+    
+   background-image: url(./images/HeroImage.gif);
+   background-position: center;
+   background-size: contain;
+   background-repeat: no-repeat;
+   z-index:-2;
+
+}
+#left{
+    width:30%;
+    height:auto;
+}
+#container{
+    box-sizing: border-box;
+    margin: auto;
+    width:72%;
+    
+    height: 90%;
+    float:right;
+    z-index:5;
+    border-right: 0;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+#header
+{
+    margin:2.5rem;
+    margin-left:4rem;
+   
+    position: absolute;
+    
+    height:10vh;
+    color:black;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+::-webkit-scrollbar {
+    display: none;
 }
