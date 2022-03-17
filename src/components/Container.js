@@ -37,7 +37,7 @@ import Task from './Task';
                  </div>
                  <div>
 <button type="button" onClick={this.addtask}>Add task</button>
-                 </div>
+                 </div> 
 
                  
              </div>
@@ -46,7 +46,7 @@ import Task from './Task';
                  {
                      tasks.map(item => {
                          
-                         return <Task task={item} key="0" />
+                         return <Task task={item} key={item.id} deletetask={this.props.deletetask} />
                      })
 }
                 

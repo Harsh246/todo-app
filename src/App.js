@@ -10,10 +10,7 @@ export default class App extends Component {
     super();
     this.state = {
       tasks: [
-        {
-          title: 'Harsh Malhotra',
-          description: 'Hi guys hahahah',
-        }
+       
       ]
       
     }
@@ -21,18 +18,42 @@ export default class App extends Component {
 
   addTask = (t, d) => {
     
+    const rand = () => {
+      return Math.random().toString(36).substr(2);
+    };
+    
+    const token = () => {
+      return rand() + rand();
+    };
+      
+    var tno = token();
+
     var newTask = this.state.tasks;
     newTask.push({
       title: t,
-    description:d})
+      description: d,
+      id: tno,
+    completed:false})
 
-    this.setState({ newTask });
+    this.setState({tasks: newTask });
     console.log("inside add task");
     console.log(this.state);
   
   }
 
+  deleteTask = (id) => {
+    console.log("inside delete");
+    console.log(id);
+    var newTasks = this.state.tasks.filter(item => item.id != id);
+    console.log(newTasks);
 
+    this.setState({ tasks: newTasks }, () => {
+      
+    console.log(this.state);
+    });
+
+
+  }
   render() {
     const { tasks } = this.state;
     
@@ -49,7 +70,7 @@ export default class App extends Component {
       </div>
  
           <div id="container">
-            <Container tasks={tasks} addtask={this.addTask}/>
+            <Container tasks={tasks} addtask={this.addTask} deletetask={this.deleteTask}/>
           </div>
     
 
