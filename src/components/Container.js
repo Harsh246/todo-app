@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Container.css";
 import Task from "./Task";
-import swal from '@sweetalert/with-react';   // used sweetalert instead of alert 
+//import swal from '@sweetalert/with-react';   // used sweetalert instead of alert //not working
 
 export default class Container extends Component {
 
@@ -25,12 +25,13 @@ export default class Container extends Component {
       this.setState({ title: "", desc: "" });
     }
     else {
-      swal( <div>
-        <h1>Oops!</h1>
-        <h3>
-          Fields can't be empty!
-        </h3>
-      </div>);
+      // swal( <div>
+      //   <h1>Oops!</h1>
+      //   <h3>
+      //     Fields can't be empty!
+      //   </h3>
+      // </div>);
+      alert("Oops!!  Fields can't be empty!");
     }
   };
 

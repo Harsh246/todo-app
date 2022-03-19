@@ -50,7 +50,8 @@
     position: absolute;
     
     height:10vh;
-    color:black;
+    color:rgb(28 31 71);
+    text-decoration: underline;
 
 }
 ::-webkit-scrollbar {

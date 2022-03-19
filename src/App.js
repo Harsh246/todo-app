@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Container from "./components/Container";
 import Modal from './components/Modal.js';
+import Counter from "./components/Counter";
 
 
 export default class App extends Component {
@@ -10,12 +11,14 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      tasks: [],
+      tasks: [
+      ],
       modal: {
         show: false,
         title: 'ye sab doglapan hai',
         description:'Bhai kya kar raha hai tu' 
-      }
+      },
+      completed: 0
       
     };
   }
@@ -88,6 +91,18 @@ export default class App extends Component {
   
     });
     
+  }
+  
+  // count the number of completed tasks to show pending ones.
+
+  completedtask = () =>
+  {
+    this.setState({
+      ...this.state,
+      completed: this.state.completed+1
+  
+    });
+    
     }
 
   render() {
@@ -102,6 +117,8 @@ export default class App extends Component {
       
         {modal.show ? <Modal title={modal.title} description={modal.description} close={this.closeModal} /> : null}
         
+
+        <Counter tasks={tasks} completed={this.state.completed} />
         <div id="main">
 
           {/* // left gif image */}
@@ -114,7 +131,8 @@ export default class App extends Component {
               tasks={tasks}
               addtask={this.addTask}
               deletetask={this.deleteTask}
-            showModal={this.showModal}
+              showModal={this.showModal}
+              completed={this.completedtask}
             />
           </div>
         </div>
